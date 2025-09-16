@@ -1,9 +1,9 @@
 // src/App.tsx
-import { AppBar, Toolbar, Typography, Container, Box, Link, Paper, List, ListItem, ListItemText } from "@mui/material";
+import { AppBar, Toolbar, Typography, Container, Box, Link, List, ListItem, ListItemText } from "@mui/material";
 
 function App() {
   return (
-    <Box sx={{ minHeight: "100vh", bgcolor: "#f5f5f5", minWidth: "100vw"}}>
+    <Box sx={{ minHeight: "100vh", bgcolor: (theme) => theme.palette.background.default, minWidth: "100vw"}}>
       {/* Header / Nav */}
       <AppBar position="static" color="primary">
         <Toolbar>
@@ -17,27 +17,28 @@ function App() {
       <Container maxWidth="lg" sx={{ py: 6, mx: "auto"}}>
         {/* About Section */}
         <Box sx={{ mb: 4 }}>
-          <Typography variant="h5" gutterBottom>
+          <Typography variant="h5" gutterBottom color="text.primary">
             About Me
           </Typography>
-          <Typography component="p">
+          <Typography component="p" color="text.primary">
             I’m a Full Stack Software Developer with experience in building and maintaining
             web applications, debugging complex systems, and contributing to team success
             through clean code and strong documentation. I’m passionate about learning new
             technologies and solving real-world problems.
           </Typography>
           <Box sx={{ mt: 2 }}>
-            <Link href="mailto:adam.michael.bishop@gmail.com" sx={{ mr: 2 }}>
+            <Link href="mailto:adam.michael.bishop@gmail.com" sx={{ mr: 2 }} color="text.primary">
               Email
             </Link>
             <Link
               href="http://www.linkedin.com/in/adam-michael-bishop"
               target="_blank"
               sx={{ mr: 2 }}
+              color="text.primary"
             >
               LinkedIn
             </Link>
-            <Link href="https://github.com/adam-michael-bishop" target="_blank">
+            <Link href="https://github.com/adam-michael-bishop" target="_blank" color="text.primary">
               GitHub
             </Link>
           </Box>
@@ -45,32 +46,32 @@ function App() {
 
         {/* Skills Section */}
         <Box sx={{ mb: 4 }}>
-          <Typography variant="h5" gutterBottom>
+          <Typography variant="h5" gutterBottom color="text.primary">
             Technical Skills
           </Typography>
           <List>
             <ListItem>
               <ListItemText
-                primary="Languages"
-                secondary="Python, Java, JavaScript, HTML, CSS, jQuery, Bootstrap"
+                primary={<span style={{color:'inherit'}}>Languages</span>}
+                secondary={<span style={{color:'inherit'}}>Python, Java, JavaScript, HTML, CSS, jQuery, Bootstrap</span>}
               />
             </ListItem>
             <ListItem>
               <ListItemText
-                primary="Frameworks & Tools"
-                secondary="React, Spring Boot, Hibernate, REST APIs, MySQL, Git"
+                primary={<span style={{color:'inherit'}}>Frameworks & Tools</span>}
+                secondary={<span style={{color:'inherit'}}>React, Spring Boot, Hibernate, REST APIs, MySQL, Git</span>}
               />
             </ListItem>
             <ListItem>
               <ListItemText
-                primary="Networking"
-                secondary="CCNA Certified, Cisco Routers, Firewalls, Switches"
+                primary={<span style={{color:'inherit'}}>Networking</span>}
+                secondary={<span style={{color:'inherit'}}>CCNA Certified, Cisco Routers, Firewalls, Switches</span>}
               />
             </ListItem>
             <ListItem>
               <ListItemText
-                primary="Familiarity"
-                secondary="Docker, C++, C#"
+                primary={<span style={{color:'inherit'}}>Familiarity</span>}
+                secondary={<span style={{color:'inherit'}}>Docker, C++, C#</span>}
               />
             </ListItem>
           </List>
@@ -78,36 +79,36 @@ function App() {
 
         {/* Experience Section */}
         <Box>
-          <Typography variant="h5" gutterBottom>
+          <Typography variant="h5" gutterBottom color="text.primary">
             Experience
           </Typography>
           <Box sx={{ mb: 3 }}>
-            <Typography variant="h6">Outlier AI – AI Data Annotator</Typography>
+            <Typography variant="h6" color="text.primary">Outlier AI – AI Data Annotator</Typography>
             <Typography variant="body2" color="text.secondary">
               Oct 2024 – Present
             </Typography>
-            <Typography>
+            <Typography color="text.primary">
               Develop coding prompts, debug AI-generated code, and refine training data.
             </Typography>
           </Box>
 
           <Box sx={{ mb: 3 }}>
-            <Typography variant="h6">LionSoft LLC – Full-Stack Developer</Typography>
+            <Typography variant="h6" color="text.primary">LionSoft LLC – Full-Stack Developer</Typography>
             <Typography variant="body2" color="text.secondary">
               Jul 2024 – Oct 2024
             </Typography>
-            <Typography>
+            <Typography color="text.primary">
               Designed and maintained full-stack apps, integrated Stripe billing,
               and implemented LLM assistant audit features.
             </Typography>
           </Box>
 
           <Box>
-            <Typography variant="h6">Cisco Meraki – Network Support Engineer</Typography>
+            <Typography variant="h6" color="text.primary">Cisco Meraki – Network Support Engineer</Typography>
             <Typography variant="body2" color="text.secondary">
               Jan 2017 – Jul 2017
             </Typography>
-            <Typography>
+            <Typography color="text.primary">
               Resolved 750+ enterprise networking cases and contributed to firmware bug fixes.
             </Typography>
           </Box>
@@ -116,7 +117,7 @@ function App() {
 
       {/* Footer */}
       <Box component="footer" sx={{ p: 2, textAlign: "center", bgcolor: "white" }}>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.primary">
           © {new Date().getFullYear()} Adam Bishop | Built with React + TypeScript + MUI
         </Typography>
       </Box>
