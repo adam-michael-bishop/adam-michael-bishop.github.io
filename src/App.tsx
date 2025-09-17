@@ -1,5 +1,6 @@
 // src/App.tsx
-import { AppBar, Toolbar, Typography, Container, Box, Link, List, ListItem, ListItemText } from "@mui/material";
+import { AppBar, Toolbar, Typography, Container, Box, Link, List, ListItem, ListItemText, Card, CardActionArea, CardMedia, CardContent, CardActions, Button } from "@mui/material";
+import Grid from "@mui/material/Grid";
 
 function App() {
   return (
@@ -75,6 +76,48 @@ function App() {
               />
             </ListItem>
           </List>
+        </Box>
+
+        {/* Projects Section */}
+        <Box sx={{ mb: 4 }}>
+          <Typography variant="h5" gutterBottom color="text.primary">
+            Projects
+          </Typography>
+
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={6} md={4}>
+              <Card sx={{ maxWidth: 480 }}>
+                <CardActionArea
+                  component="a"
+                  href="https://weathermap-project.netlify.app/" /* <- edit this URL */
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open project in new tab"
+                >
+                  <CardMedia
+                    component="img"
+                    height="200"
+                    image="/path/to/preview.png" /* <- replace with your preview image path */
+                    alt="Project preview"
+                    loading="lazy"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h6" component="div" color="text.primary">
+                      Project Title
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      Short project description. Click to open live demo.
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions>
+                  <Button size="small" color="primary" href="https://github.com/your-repo" target="_blank" rel="noopener noreferrer">
+                    Source
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          </Grid>
         </Box>
 
         {/* Experience Section */}
