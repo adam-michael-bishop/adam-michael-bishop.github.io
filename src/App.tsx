@@ -95,10 +95,10 @@ function App() {
             About Me
           </Typography>
           <Typography component="p" color="text.primary">
-            I’m a Full Stack Software Developer with experience in building and
+            I'm a Full Stack Software Developer with experience in building and
             maintaining web applications, debugging complex systems, and
             contributing to team success through clean code and strong
-            documentation. I’m passionate about learning new technologies and
+            documentation. I'm passionate about learning new technologies and
             solving real-world problems.
           </Typography>
         </Box>
@@ -152,61 +152,6 @@ function App() {
           </List>
         </Box>
 
-        {/* Projects Section */}
-        <Box id="projects" sx={{ mb: 4, scrollMarginTop: 80 }}>
-          <Typography variant="h5" gutterBottom color="text.primary">
-            Projects
-          </Typography>
-
-          <Grid container spacing={2}>
-            <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-              <Card sx={{ maxWidth: 480 }}>
-                <CardActionArea
-                  component="a"
-                  href="https://weathermap-project.netlify.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Open project in new tab"
-                >
-                  <CardMedia
-                    component="img"
-                    height="200"
-                    image="/path/to/preview.png"
-                    alt="Project preview"
-                    loading="lazy"
-                  />
-                  <CardContent>
-                    <Typography
-                      gutterBottom
-                      variant="h6"
-                      component="div"
-                      color="text.primary"
-                    >
-                      WeatherMap
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      WeatherMap is an interactive web app that uses Mapbox and
-                      OpenWeather APIs to display a 5-day weather forecast for
-                      any location on the map.
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-                <CardActions>
-                  <Button
-                    size="small"
-                    color="primary"
-                    href="https://github.com/adam-michael-bishop/weathermap-project"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Source Code
-                  </Button>
-                </CardActions>
-              </Card>
-            </Grid>
-          </Grid>
-        </Box>
-
         {/* Experience Section */}
         <Box sx={{ scrollMarginTop: 80 }}>
           <Typography variant="h5" gutterBottom color="text.primary">
@@ -250,6 +195,61 @@ function App() {
               firmware bug fixes.
             </Typography>
           </Box>
+        </Box>
+
+        {/* Projects Section */}
+        <Box id="projects" sx={{ mb: 4, scrollMarginTop: 80 }}>
+          <Typography variant="h5" gutterBottom color="text.primary">
+            Projects
+          </Typography>
+
+          <Grid container spacing={2}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+              <Card sx={{ maxWidth: 480 }}>
+                <CardActionArea
+                  component="a"
+                  href="https://weathermap-project.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open project in new tab"
+                >
+                  <CardMedia
+                    component="img"
+                    height="200"
+                    image="../public/mapbox-thumbnail.png"
+                    alt="Project preview"
+                    loading="lazy"
+                  />
+                  <CardContent>
+                    <Typography
+                      gutterBottom
+                      variant="h6"
+                      component="div"
+                      color="text.primary"
+                    >
+                      WeatherMap
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      WeatherMap is an interactive web app that uses Mapbox and
+                      OpenWeather APIs to display a 5-day weather forecast for
+                      any location on the map.
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions>
+                  <Button
+                    size="small"
+                    color="primary"
+                    href="https://github.com/adam-michael-bishop/weathermap-project"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Source Code
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          </Grid>
         </Box>
 
         {/* Contact Section */}
