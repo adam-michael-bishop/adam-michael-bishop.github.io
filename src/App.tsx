@@ -5,7 +5,6 @@ import {
   Typography,
   Container,
   Box,
-  Link,
   List,
   ListItem,
   ListItemText,
@@ -16,6 +15,7 @@ import {
   CardActions,
   Button,
   IconButton,
+  TextField,
 } from "@mui/material";
 import Grid from "@mui/material/Grid";
 
@@ -185,7 +185,9 @@ function App() {
                       WeatherMap
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                       WeatherMap is an interactive web app that uses Mapbox and OpenWeather APIs to display a 5-day weather forecast for any location on the map.
+                      WeatherMap is an interactive web app that uses Mapbox and
+                      OpenWeather APIs to display a 5-day weather forecast for
+                      any location on the map.
                     </Typography>
                   </CardContent>
                 </CardActionArea>
@@ -256,24 +258,83 @@ function App() {
             Contact
           </Typography>
           <Typography color="text.secondary">
-            Feel free to reach out via the links below.
+            Get in touch or connect:
           </Typography>
-          <Box sx={{ mt: 2 }}>
-            <Link
+          <Box sx={{ mt: 1, display: "flex", gap: 1 }}>
+            <IconButton
+              component="a"
               href="mailto:adam.michael.bishop@gmail.com"
-              sx={{ mr: 2 }}
-              color="text.primary"
+              aria-label="Email"
+              color="primary"
             >
-              Email
-            </Link>
-            <Link
-              href="http://www.linkedin.com/in/adam-michael-bishop"
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
+              </svg>
+            </IconButton>
+            <IconButton
+              component="a"
+              href="https://www.linkedin.com/in/adam-michael-bishop"
               target="_blank"
-              sx={{ mr: 2 }}
-              color="text.primary"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              color="primary"
             >
-              LinkedIn
-            </Link>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M20.447 20.452H17.21v-5.569c0-1.329-.027-3.039-1.852-3.039-1.853 0-2.135 1.447-2.135 2.944v5.664H9.0V9.0h3.111v1.561h.045c.434-.822 1.494-1.69 3.074-1.69 3.289 0 3.895 2.165 3.895 4.982v6.599zM5.337 7.433a1.81 1.81 0 1 1 0-3.62 1.81 1.81 0 0 1 0 3.62zM6.954 20.452H3.719V9.0h3.235v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </IconButton>
+          </Box>
+
+          <Box
+            component="form"
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
+            sx={{ mt: 3, display: "grid", gap: 2, maxWidth: 600 }}
+          >
+            <TextField
+              label="Name"
+              name="name"
+              variant="outlined"
+              required
+              fullWidth
+            />
+            <TextField
+              label="Email"
+              name="email"
+              type="email"
+              variant="outlined"
+              required
+              fullWidth
+            />
+            <TextField
+              label="Message"
+              name="message"
+              variant="outlined"
+              required
+              fullWidth
+              multiline
+              minRows={4}
+            />
+            <Box>
+              <Button type="submit" variant="contained" color="primary">
+                Send
+              </Button>
+            </Box>
           </Box>
         </Box>
       </Container>
