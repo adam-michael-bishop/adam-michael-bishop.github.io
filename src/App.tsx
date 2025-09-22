@@ -28,18 +28,48 @@ function App() {
       }}
     >
       {/* Header / Nav */}
-      <AppBar position="static" color="primary">
+      <AppBar position="sticky" color="primary">
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             Adam Bishop
           </Typography>
+          <Button
+            color="inherit"
+            onClick={() => {
+              document
+                .getElementById("about")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            About
+          </Button>
+          <Button
+            color="inherit"
+            onClick={() => {
+              document
+                .getElementById("projects")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            Projects
+          </Button>
+          <Button
+            color="inherit"
+            onClick={() => {
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            Contact
+          </Button>
         </Toolbar>
       </AppBar>
 
       {/* Main Content */}
       <Container maxWidth="lg" sx={{ py: 6, mx: "auto" }}>
         {/* About Section */}
-        <Box sx={{ mb: 4 }}>
+        <Box id="about" sx={{ mb: 4, scrollMarginTop: 80 }}>
           <Typography variant="h5" gutterBottom color="text.primary">
             About Me
           </Typography>
@@ -126,13 +156,13 @@ function App() {
         </Box>
 
         {/* Projects Section */}
-        <Box sx={{ mb: 4 }}>
+        <Box id="projects" sx={{ mb: 4, scrollMarginTop: 80 }}>
           <Typography variant="h5" gutterBottom color="text.primary">
             Projects
           </Typography>
 
           <Grid container spacing={2}>
-            <Grid size={{ xs: 12, sm: 6, md: 4}}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }}>
               <Card sx={{ maxWidth: 480 }}>
                 <CardActionArea
                   component="a"
@@ -179,7 +209,7 @@ function App() {
         </Box>
 
         {/* Experience Section */}
-        <Box>
+        <Box sx={{ scrollMarginTop: 80 }}>
           <Typography variant="h5" gutterBottom color="text.primary">
             Experience
           </Typography>
@@ -221,6 +251,16 @@ function App() {
               firmware bug fixes.
             </Typography>
           </Box>
+        </Box>
+
+        {/* Contact Section */}
+        <Box id="contact" sx={{ mt: 6, mb: 2, scrollMarginTop: 80 }}>
+          <Typography variant="h5" gutterBottom color="text.primary">
+            Contact
+          </Typography>
+          <Typography color="text.secondary">
+            Placeholder contact section. Add a form or contact details here.
+          </Typography>
         </Box>
       </Container>
 
